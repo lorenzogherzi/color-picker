@@ -1,19 +1,21 @@
+<p align="center"><img src="Resources/AppIcon.png" width="160" alt="ColorPick icon"></p>
+
 # ColorPick
 
-Miniapp macOS per la menu bar: prelevi un colore dallo schermo e il codice HEX va negli appunti.
+A tiny macOS menu bar app: pick a color from anywhere on screen and its HEX code lands on your clipboard.
 
-## Funzioni
+## Features
 
-- **Pick Color**: apre la lente di sistema; clicchi un punto qualsiasi dello schermo e il colore viene copiato come `#RRGGBB` (sRGB).
-- **Storico**: gli ultimi 20 colori sono nel menu, ciascuno con un'anteprima. Se ne clicchi uno lo copi negli appunti. I primi 9 hanno i tasti rapidi 1–9.
-- **Clear History** svuota lo storico.
+- **Pick Color**: opens the system magnifier; click any point on screen and the color is copied as `#RRGGBB` (sRGB).
+- **History**: the last 20 colors are listed in the menu, each with a swatch. Click one to copy it to the clipboard. The first 9 have the 1–9 shortcuts.
+- **Clear History** empties the list.
 
-Lo storico resta salvato tra un avvio e l'altro.
+History is kept across launches.
 
-## Requisiti
+## Requirements
 
-- macOS 14 o successivo
-- Xcode o Command Line Tools (Swift 6)
+- macOS 14 or later
+- Xcode or the Command Line Tools (Swift 6)
 
 ## Build
 
@@ -22,8 +24,16 @@ Lo storico resta salvato tra un avvio e l'altro.
 open ColorPick.app
 ```
 
-Per avviarla in automatico al login, copia `ColorPick.app` in `/Applications` e aggiungila in Impostazioni di Sistema → Generali → Elementi login.
+To start it at login, copy `ColorPick.app` to `/Applications` and add it under System Settings → General → Login Items.
 
-## Crediti
+## Icon
 
-Ispirata all'estensione [Color Picker](https://www.raycast.com/thomas/color-picker) per Raycast (licenza MIT).
+The icon is drawn in code by `scripts/make-icon.swift`, using the [SHAP](https://github.com/shap/shap) `red_blue` colormap. To regenerate it:
+
+```bash
+swift scripts/make-icon.swift Resources/AppIcon.png && ./build.sh
+```
+
+## Credits
+
+Inspired by the [Color Picker](https://www.raycast.com/thomas/color-picker) extension for Raycast (MIT license).
